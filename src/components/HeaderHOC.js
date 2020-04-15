@@ -42,9 +42,9 @@ const HeaderHOC = ({...rest}) => {
   }
 
   return (
-    <Flex flexDirection='column'>
+    <Flex flexDirection='column' bg='#D3D0CB'>
       <Box>
-        <Flex backgroundColor='#D3D0CB' justifyContent='space-between'>
+        <Flex justifyContent='space-between'>
           <Box flexGrow={2}>
             <FirstName>Brennick</FirstName>
             <LastName>Langston</LastName>

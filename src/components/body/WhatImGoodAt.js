@@ -46,8 +46,12 @@ const WhatImGoodAt = ({...rest}) => {
             <SkillType>
               {ss.type}
             </SkillType>
-            </Cell>
-          <Cell flexGrow={1}>{ss.years}&nbsp;years</Cell>
+          </Cell>
+          <Cell flexGrow={1}>
+            <SkillYears>
+              {ss.years}&nbsp;years
+            </SkillYears>
+          </Cell>
         </Row>
       ))
     }

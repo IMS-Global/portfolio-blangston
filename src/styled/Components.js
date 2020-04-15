@@ -11,7 +11,9 @@ export const Title = styled(Heading)`
   letter-spacing: 0.35px;
   line-height: 38px;
 `
-export const Info = styled(Text)`
+export const Info = styled(Text).attrs(p => ({
+  as: 'p',
+}))`
   height: 252px;
   width: 298px;
   color: #222731;
@@ -28,6 +30,8 @@ export const Icon = styled.i`
 
 export const Table = styled(Flex).attrs(p => ({
   flexDirection: 'column',
+  mt: 16,
+  mb: 16,
 }))`
 `
 export const Row = styled(Flex).attrs(p => ({
