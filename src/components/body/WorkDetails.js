@@ -1,19 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@primer/components'
-import styled from 'styled-components'
-
-const UnOrderedList = styled.ul`
-  li::before {
-    color: #BA5A31;
-  }
-`
-const ListItem = styled.li`
-  color: #222731;
-  font-family: Roboto;
-  font-size: 14px;
-  letter-spacing: 0.19px;
-  line-height: 21px;
-`
+import { UnOrderedList, ListItem } from '../../styled/Components'
 
 const workDetails = {
   verisys: [

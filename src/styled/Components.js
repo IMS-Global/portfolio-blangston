@@ -45,3 +45,17 @@ export const Row = styled(Flex).attrs(p => ({
   }
 `
 export const Cell = styled(Box)``
+
+export const UnOrderedList = styled.ul`
+  li::before {
+    color: #BA5A31;
+  }
+`
+export const ListItem = styled.li`
+  color: #222731;
+  font-family: Roboto;
+  font-size: 14px;
+  letter-spacing: 0.19px;
+  line-height: 21px;
+  margin-bottom: 0.25rem;
+`
