@@ -1,5 +1,5 @@
 import { Flex, Box, Heading, Text } from '@primer/components'
-import { color, layout } from 'styled-system'
+import { color, space, layout } from 'styled-system'
 import styled from 'styled-components'
 
 export const Title = styled(Heading)`
@@ -22,7 +22,14 @@ export const Info = styled(Text).attrs(p => ({
   letter-spacing: 0.19px;
   line-height: 21px;
 `
-export const Image = styled.img``
+export const Image = styled.img`
+  ${ space }
+  ${ layout }
+
+  &:nth-child(n) {
+    margin-left: 8px;
+  }
+`
 
 export const Icon = styled.i`
   ${ color }
