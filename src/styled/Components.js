@@ -6,6 +6,7 @@ export { Header } from './Header'
 export { List } from './List'
 export { Table } from './Table'
 export { Paragraph } from './Paragraph'
+export { Container } from './Container'
 
 export const Image = styled.img`
   ${ space }

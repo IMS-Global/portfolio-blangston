@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Flex } from '@primer/components'
-import { Image } from '../styled/Components'
+import { Container, Image } from '../styled/Components'
 import { motion } from 'framer-motion'
 import { shuffle } from 'lodash'
 import styled from 'styled-components'
@@ -75,11 +74,11 @@ const Technologies = ({...rest}) => {
   }
 
   return (
-    <Flex justifyContent='center'>
+    <Container.Row justifyContent='center'>
       <UnOrderedList>
         { renderListItems() }
       </UnOrderedList>
-    </Flex>
+    </Container.Row>
   )
 }
 
