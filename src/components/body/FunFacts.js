@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Flex, Box, Text } from '@primer/components'
-import { Button } from '../../styled/Buttons'
-import { List } from '../../styled/List'
-import { Header } from '../../styled/Header'
+import { Button, List, Header } from '../../styled/Components'
 
 const journalArticles = [
   'Yu Q, Guyot R, de Kochko A, Byers A, Navajas-Perez R, Langston BJ, Dubreuil-Tranchant C, Paterson AH, Poncet V, Nagai C, Ming R. <<Microcollinearity and Genome Evolution in the Vicinity of an Ethylene Receptor Gene of Cultivated Diploid and Allotetraploid Coffee Species (Coffea)>>. The Plant Journal, Web. 13 May 2011. (Currently In Print)',

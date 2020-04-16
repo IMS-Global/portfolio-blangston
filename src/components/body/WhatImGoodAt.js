@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box } from '@primer/components'
-import { Table } from '../../styled/Table'
-import { Header } from '../../styled/Header'
+import { Header, Table } from '../../styled/Components'
 import styled from 'styled-components'
 
 

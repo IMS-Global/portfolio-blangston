@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box } from '@primer/components'
-import { Header } from '../../styled/Header'
-import { Paragraph } from '../../styled/Paragraph'
+import { Header, Paragraph } from '../../styled/Components'
 
 const AboutMe = ({...rest}) => {
 

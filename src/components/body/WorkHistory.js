@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '@primer/components'
-import { Image, Icon } from '../../styled/Components'
-import { Table } from '../../styled/Table'
-import { Header } from '../../styled/Header'
+import { Table, Header, Image, Icon } from '../../styled/Components'
 import WorkDetails from './WorkDetails'
 
 // Images

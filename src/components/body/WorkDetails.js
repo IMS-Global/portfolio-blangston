@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@primer/components'
-import { List } from '../../styled/List'
+import { List } from '../../styled/Components'
 
 const workDetails = {
   verisys: [
