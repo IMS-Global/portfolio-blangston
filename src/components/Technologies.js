@@ -4,11 +4,11 @@ import { motion } from 'framer-motion'
 import { shuffle } from 'lodash'
 import styled from 'styled-components'
 
-import Ruby from '../images/ruby.jpg'
-import Rails from '../images/ruby_on_rails.png'
-import ReactJS from '../images/react-icon.png'
-import Redux from '../images/redux-logo.svg'
-import GitHub from '../images/GitHub-Mark-32px.png'
+import Ruby from '../images/ruby_logo.svg'
+import Rails from '../images/ruby_on_rails.svg'
+import ReactJS from '../images/reactjs_logo.svg'
+import Redux from '../images/redux_logo.svg'
+import GitHub from '../images/github_logo.svg'
 
 const UnOrderedList = styled.ul`
   display: flex;
@@ -27,6 +27,11 @@ const ListElement = styled(motion.li)`
   margin-right: 5px;
   width: 50px;
   height: 50px;
+`
+const Logo = styled(Image)`
+  width: 40px;
+  height: 40px;
+  margin: 5px;
 `
 
 const ColoredIcons = [
@@ -67,7 +72,7 @@ const Technologies = ({...rest}) => {
           layoutTransition={spring}
           style={{ background: color}}
         >
-          <Image src={ColoredIcons[index].icon} width='45px' height='45px' />
+          <Logo src={ColoredIcons[index].icon} />
         </ListElement>
 ))
     }
