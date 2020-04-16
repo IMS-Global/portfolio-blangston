@@ -1,4 +1,3 @@
-import { Flex, Box, Heading, Text } from '@primer/components'
 import { color, space, layout } from 'styled-system'
 import styled from 'styled-components'
 
