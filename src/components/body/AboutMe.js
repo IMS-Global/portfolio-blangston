@@ -1,19 +1,20 @@
 import React from 'react'
 import { Box } from '@primer/components'
-import { Title, Info } from '../../styled/Components'
+import { Header } from '../../styled/Header'
+import { Paragraph } from '../../styled/Paragraph'
 
 const AboutMe = ({...rest}) => {
 
   return (
     <Box>
-      <Title fontSize={2}>About Me</Title>
-      <Info>
+      <Header.H1>About Me</Header.H1>
+      <Paragraph.Normal>
         Qualified professional with a well-developed acumen reflecting a career 
         of strong skills coupled with hands-on software development and data analysis.
         Recognized ability to apply advanced technical solutions to a diverse range of 
         project requirements. Record of delivering mission critical solutions and 
         products on time and under budget. Team based work style and superior interpersonal skills.
-      </Info>
+      </Paragraph.Normal>
     </Box>
   )
 }

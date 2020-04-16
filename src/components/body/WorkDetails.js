@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Box } from '@primer/components'
-import { UnOrderedList, ListItem } from '../../styled/Components'
+import { List } from '../../styled/List'
 
 const workDetails = {
   verisys: [
@@ -53,7 +53,7 @@ const WorkDetails = ({company, ...rest}) => {
   const renderDetailsAsList = () => {
     if(details && details.length > 0){
       return details.map((listItem, index) => (
-        <ListItem key={index}>{listItem}</ListItem>
+        <List.Item key={index}>{listItem}</List.Item>
       ))
     }
   }
@@ -61,9 +61,9 @@ const WorkDetails = ({company, ...rest}) => {
   return (
     <Box>
       {details && 
-        <UnOrderedList>
+        <List.UnOrdered>
           { renderDetailsAsList() }
-        </UnOrderedList>
+        </List.UnOrdered>
       }
     </Box>
   )

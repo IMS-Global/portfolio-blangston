@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
-import { Flex, Box, Text, Button } from '@primer/components'
-import { Title, UnOrderedList, ListItem } from '../../styled/Components'
-import styled from 'styled-components'
-
-const ShowPubs = styled(Button)`
-  background-color: #BA5A31 !important;
-  color: #FFF;
-`
+import { Flex, Box, Text } from '@primer/components'
+import { Button } from '../../styled/Buttons'
+import { List } from '../../styled/List'
+import { Header } from '../../styled/Header'
 
 const journalArticles = [
   'Yu Q, Guyot R, de Kochko A, Byers A, Navajas-Perez R, Langston BJ, Dubreuil-Tranchant C, Paterson AH, Poncet V, Nagai C, Ming R. <<Microcollinearity and Genome Evolution in the Vicinity of an Ethylene Receptor Gene of Cultivated Diploid and Allotetraploid Coffee Species (Coffea)>>. The Plant Journal, Web. 13 May 2011. (Currently In Print)',
@@ -25,7 +21,7 @@ const FunFacts = ({...rest}) => {
   const renderJournalArticles = () => {
     if(journalArticles && journalArticles.length > 0){
       return journalArticles.map((ja, index) => (
-        <ListItem key={index}>{ja}</ListItem>
+        <List.Item key={index}>{ja}</List.Item>
       ))
     }
   }
@@ -33,22 +29,19 @@ const FunFacts = ({...rest}) => {
   return (
     <Flex flexDirection='column'>
       <Box backgroundColor='#F6F2ED' p={16}>
-        <Title>Fun Facts</Title>
+        <Header.H1>Fun Facts</Header.H1>
         <Text as='p'>
           I published 6 Peer Reviewed Science Articles between 2002 and 2011
         </Text>
-        <ShowPubs 
-          color='#BA5A31'
-          onClick={toggleShow}
-        >
+        <Button.Plain onClick={toggleShow}>
           {show ? 'Close' : 'View'} Publications
-        </ShowPubs>
+        </Button.Plain>
       </Box>
       {show && (
         <Box>
-          <UnOrderedList>
+          <List.UnOrdered>
             {renderJournalArticles()}
-          </UnOrderedList>
+          </List.UnOrdered>
         </Box>
       )}
     </Flex>

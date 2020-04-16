@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Flex, Box } from '@primer/components'
-import { Title, Image, Icon, Table, Row, Cell } from '../../styled/Components'
+import { Box } from '@primer/components'
+import { Image, Icon } from '../../styled/Components'
+import { Table } from '../../styled/Table'
+import { Header } from '../../styled/Header'
 import WorkDetails from './WorkDetails'
 
 // Images
@@ -55,32 +57,32 @@ const WorkHistory = ({...rest}) => {
   const renderWorkHistory = () => {
     if(workHistory && workHistory.length > 0){
       return workHistory.map((wh, index) => (
-        <Flex key={index} flexDirection='column'>
-          <Row height={65} alignItems='center'>
-            <Cell><Year>{wh.year}</Year></Cell>
-            <Cell>
+        <Table.Body key={index}>
+          <Table.Row height={65} alignItems='center'>
+            <Table.Cell><Year>{wh.year}</Year></Table.Cell>
+            <Table.Cell>
               <Image src={wh.url} />
-            </Cell>
-            <Cell>
+            </Table.Cell>
+            <Table.Cell>
               <Icon 
                 className={angleIcon(wh.company)}
                 color='#BA5A31' 
                 onClick={() => updateCompany(wh.company)}
               />
-            </Cell>
-          </Row>
+            </Table.Cell>
+          </Table.Row>
           { company === wh.company && <WorkDetails company={company} /> }
-        </Flex>
+        </Table.Body>
       ))
     }
   }
 
   return (
     <Box>
-      <Title> Dev Expirience</Title>
-      <Table>
+      <Header.H1>Dev Expirience</Header.H1>
+      <Table.Frame>
         { renderWorkHistory() }
-      </Table>
+      </Table.Frame>
     </Box>
   )
 }
