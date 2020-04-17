@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex } from '@primer/components'
+import { Container } from '../../styled/Components'
 import AboutMe from './AboutMe'
 import WhatImGoodAt from './WhatImGoodAt'
 import WorkHistory from './WorkHistory'
@@ -8,12 +8,12 @@ import FunFacts from './FunFacts'
 const HomePage = ({...rest}) => {
 
   return (
-    <Flex flexDirection='column' p='1rem'>
+    <Container.Col>
       <AboutMe />
       <WhatImGoodAt />
       <WorkHistory />
       <FunFacts />
-    </Flex>
+    </Container.Col>
   )
 }
 

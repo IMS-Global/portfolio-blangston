@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Flex, Box } from '@primer/components'
-import { Title, Image, Icon, Table, Row, Cell } from '../../styled/Components'
+import { Box } from '@primer/components'
+import { Accordion, Header, Image, Icon } from '../../styled/Components'
 import WorkDetails from './WorkDetails'
 
 // Images
@@ -55,32 +55,32 @@ const WorkHistory = ({...rest}) => {
   const renderWorkHistory = () => {
     if(workHistory && workHistory.length > 0){
       return workHistory.map((wh, index) => (
-        <Flex key={index} flexDirection='column'>
-          <Row height={65} alignItems='center'>
-            <Cell><Year>{wh.year}</Year></Cell>
-            <Cell>
+        <Accordion.Section key={index}>
+          <Accordion.SubSection height={65} alignItems='center'>
+            <Accordion.Block><Year>{wh.year}</Year></Accordion.Block>
+            <Accordion.Block>
               <Image src={wh.url} />
-            </Cell>
-            <Cell>
+            </Accordion.Block>
+            <Accordion.Block>
               <Icon 
                 className={angleIcon(wh.company)}
                 color='#BA5A31' 
                 onClick={() => updateCompany(wh.company)}
               />
-            </Cell>
-          </Row>
+            </Accordion.Block>
+          </Accordion.SubSection>
           { company === wh.company && <WorkDetails company={company} /> }
-        </Flex>
+        </Accordion.Section>
       ))
     }
   }
 
   return (
     <Box>
-      <Title> Dev Expirience</Title>
-      <Table>
+      <Header.H1>Dev Experience</Header.H1>
+      <Accordion.Frame>
         { renderWorkHistory() }
-      </Table>
+      </Accordion.Frame>
     </Box>
   )
 }

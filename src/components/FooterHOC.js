@@ -1,10 +1,10 @@
 import React from 'react'
 import { Flex } from '@primer/components'
-import { Title, Image } from '../styled/Components'
+import { Container, Image, Header } from '../styled/Components'
 import styled from 'styled-components'
 
-import GitHub from '../images/GitHub-Mark-32px.png'
-import LinkedIn from '../images/linkedin.png'
+import GitHub from '../images/github-brands.png'
+import LinkedIn from '../images/linkedin-brands.png'
 
 const ImageBox = styled(Flex)`
   margin-right: 8px;
@@ -14,13 +14,13 @@ const ImageBox = styled(Flex)`
 const FooterHOC = ({...rest}) => {
 
   return (
-    <Flex flexDirection='column'>
-      <Title>Learn More</Title>
+    <Container.Col>
+      <Header.H1>Learn More</Header.H1>
       <ImageBox>
         <Image src={GitHub} width='30px' height='30px' />
         <Image src={LinkedIn} width='30px' height='30px' />
       </ImageBox>
-    </Flex>
+    </Container.Col>
   )
 }
 
