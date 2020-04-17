@@ -59,7 +59,7 @@ const HeaderHOC = ({...rest}) => {
       </Box>
       <Box>
         <Flex backgroundColor='#D3D0CB' justifyContent='center'>
-          <Image src={BrennickImage} />
+          <Image src={BrennickImage} mb={-16}/>
         </Flex>
       </Box>
     </Container.Col>

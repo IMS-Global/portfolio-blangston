@@ -1,6 +1,16 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import { Box, Text } from '@primer/components'
-import { Container, Button, List, Header } from '../../styled/Components'
+import { border, layout } from 'styled-system'
+import { Button, List, Header } from '../../styled/Components'
+
+const Boxy = styled(Box).attrs(p => ({
+  borderRadius: 5,
+  backgroundColor: '#F6F2ED',
+}))`
+  ${ layout }
+  ${ border }
+`
 
 const journalArticles = [
   'Yu Q, Guyot R, de Kochko A, Byers A, Navajas-Perez R, Langston BJ, Dubreuil-Tranchant C, Paterson AH, Poncet V, Nagai C, Ming R. <<Microcollinearity and Genome Evolution in the Vicinity of an Ethylene Receptor Gene of Cultivated Diploid and Allotetraploid Coffee Species (Coffea)>>. The Plant Journal, Web. 13 May 2011. (Currently In Print)',
@@ -25,8 +35,8 @@ const FunFacts = ({...rest}) => {
   }
 
   return (
-    <Container.Col backgroundColor='#F6F2ED' p={16}>
-      <Box>
+    <Boxy>
+      <Box p={16}>
         <Header.H1>Fun Facts</Header.H1>
         <Text as='p'>
           I published 6 Peer Reviewed Science Articles between 2002 and 2011
@@ -36,13 +46,13 @@ const FunFacts = ({...rest}) => {
         </Button.Plain>
       </Box>
       {show && (
-        <Box backgroundColor='#FFF' mt={16}>
+        <List.Box>
           <List.UnOrdered>
             {renderJournalArticles()}
           </List.UnOrdered>
-        </Box>
+        </List.Box>
       )}
-    </Container.Col>
+    </Boxy>
   )
 }
 

@@ -41,18 +41,20 @@ const WhatImGoodAt = ({...rest}) => {
   const renderSkillSets = () => {
     if(skillSets && skillSets.length > 0){
       return skillSets.map((ss, index) => (
-        <Table.Row key={index}>
-          <Table.Cell flexGrow={3}>
-            <SkillType>
-              {ss.type}
-            </SkillType>
-          </Table.Cell>
-          <Table.Cell flexGrow={1}>
-            <SkillYears>
-              {ss.years}&nbsp;years
-            </SkillYears>
-          </Table.Cell>
-        </Table.Row>
+        <Table.Body key={index}>
+          <Table.Row>
+            <Table.Cell flexGrow={3}>
+              <SkillType>
+                {ss.type}
+              </SkillType>
+            </Table.Cell>
+            <Table.Cell flexGrow={1}>
+              <SkillYears>
+                {ss.years}&nbsp;years
+              </SkillYears>
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
       ))
     }
   }

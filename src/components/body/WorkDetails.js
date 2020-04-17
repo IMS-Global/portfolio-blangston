@@ -59,13 +59,13 @@ const WorkDetails = ({company, ...rest}) => {
   }
 
   return (
-    <Box>
+    <List.Box>
       {details && 
         <List.UnOrdered>
           { renderDetailsAsList() }
         </List.UnOrdered>
       }
-    </Box>
+    </List.Box>
   )
 }
 

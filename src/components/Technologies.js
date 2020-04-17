@@ -34,13 +34,12 @@ const Logo = styled(Image)`
   margin: 5px;
 `
 
-const ColoredIcons = [
-  { color: '#222731', icon: Ruby },
-  { color: '#423F38', icon: Redux },
-  { color: '#BA5A31', icon: ReactJS },
-  { color: '#3A404F', icon: Rails },
-  { color: '#D3D0CB', icon: GitHub },
-  //{ color: '#F6F2ED', icon: '' },
+const Icons = [
+  Ruby,
+  Redux,
+  ReactJS,
+  Rails,
+  GitHub,
 ]
 
 const spring = {
@@ -50,29 +49,27 @@ const spring = {
 }
 
 const Technologies = ({...rest}) => {
-  const [colors, setColors] = useState([])
+  const [icons, setIcons] = useState([])
 
-  const mappedColors = () => ColoredIcons.map(ci => ci.color)
 
-  const loadColors = () => {
-    setColors(mappedColors())
+  const loadIcons = () => {
+    setIcons([...Icons])
   }
-  useEffect(loadColors, [])
+  useEffect(loadIcons, [])
 
-  const updateColors = () => {
-    setTimeout(() => setColors(shuffle(mappedColors())), 1000)
+  const updateIcons = () => {
+    setTimeout(() => setIcons(shuffle(Icons)), 1000)
   }
-  useEffect(updateColors, [colors])
+  useEffect(updateIcons, [icons])
 
   const renderListItems = () => {
-    if(colors && colors.length > 0) {
-      return colors.map((color, index) => (
+    if(icons && icons.length > 0) {
+      return icons.map((icon, index) => (
         <ListElement
           key={index}
           layoutTransition={spring}
-          style={{ background: color}}
         >
-          <Logo src={ColoredIcons[index].icon} />
+          <Logo src={icon} />
         </ListElement>
 ))
     }

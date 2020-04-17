@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Box } from '@primer/components'
-import { Table, Header, Image, Icon } from '../../styled/Components'
+import { Accordion, Header, Image, Icon } from '../../styled/Components'
 import WorkDetails from './WorkDetails'
 
 // Images
@@ -55,32 +55,32 @@ const WorkHistory = ({...rest}) => {
   const renderWorkHistory = () => {
     if(workHistory && workHistory.length > 0){
       return workHistory.map((wh, index) => (
-        <Table.Body key={index}>
-          <Table.Row height={65} alignItems='center'>
-            <Table.Cell><Year>{wh.year}</Year></Table.Cell>
-            <Table.Cell>
+        <Accordion.Section key={index}>
+          <Accordion.SubSection height={65} alignItems='center'>
+            <Accordion.Block><Year>{wh.year}</Year></Accordion.Block>
+            <Accordion.Block>
               <Image src={wh.url} />
-            </Table.Cell>
-            <Table.Cell>
+            </Accordion.Block>
+            <Accordion.Block>
               <Icon 
                 className={angleIcon(wh.company)}
                 color='#BA5A31' 
                 onClick={() => updateCompany(wh.company)}
               />
-            </Table.Cell>
-          </Table.Row>
+            </Accordion.Block>
+          </Accordion.SubSection>
           { company === wh.company && <WorkDetails company={company} /> }
-        </Table.Body>
+        </Accordion.Section>
       ))
     }
   }
 
   return (
     <Box>
-      <Header.H1>Dev Expirience</Header.H1>
-      <Table.Frame>
+      <Header.H1>Dev Experience</Header.H1>
+      <Accordion.Frame>
         { renderWorkHistory() }
-      </Table.Frame>
+      </Accordion.Frame>
     </Box>
   )
 }

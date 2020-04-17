@@ -1,6 +1,19 @@
+import { Box } from '@primer/components'
+import { border, layout } from 'styled-system'
 import styled from 'styled-components'
 
 const List = {}
+
+List.Box = styled(Box).attrs(p => ({
+  backgroundColor: '#FFF',
+  borderRadius: 5,
+}))`
+  ${ layout }
+  ${ border }
+
+  border-right: 2px solid #F6F2ED;
+  border-left: 2px solid #F6F2ED;
+`
 
 List.UnOrdered = styled.ul`
   padding-right: 1rem;
