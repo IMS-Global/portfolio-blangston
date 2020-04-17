@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Flex } from '@primer/components'
-import { Image } from '../styled/Components'
+import { Container, Image } from '../styled/Components'
 import { motion } from 'framer-motion'
 import { shuffle } from 'lodash'
 import styled from 'styled-components'
 
-import Ruby from '../images/ruby.jpg'
-import Rails from '../images/ruby_on_rails.png'
-import ReactJS from '../images/react-icon.png'
-import Redux from '../images/redux-logo.svg'
-import GitHub from '../images/GitHub-Mark-32px.png'
+import Ruby from '../images/ruby_logo.svg'
+import Rails from '../images/ruby_on_rails.svg'
+import ReactJS from '../images/reactjs_logo.svg'
+import Redux from '../images/redux_logo.svg'
+import GitHub from '../images/github_logo.svg'
 
 const UnOrderedList = styled.ul`
   display: flex;
@@ -29,14 +28,18 @@ const ListElement = styled(motion.li)`
   width: 50px;
   height: 50px;
 `
+const Logo = styled(Image)`
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+`
 
-const ColoredIcons = [
-  { color: '#222731', icon: Ruby },
-  { color: '#423F38', icon: Redux },
-  { color: '#BA5A31', icon: ReactJS },
-  { color: '#3A404F', icon: Rails },
-  { color: '#D3D0CB', icon: GitHub },
-  //{ color: '#F6F2ED', icon: '' },
+const Icons = [
+  Ruby,
+  Redux,
+  ReactJS,
+  Rails,
+  GitHub,
 ]
 
 const spring = {
@@ -46,40 +49,38 @@ const spring = {
 }
 
 const Technologies = ({...rest}) => {
-  const [colors, setColors] = useState([])
+  const [icons, setIcons] = useState([])
 
-  const mappedColors = () => ColoredIcons.map(ci => ci.color)
 
-  const loadColors = () => {
-    setColors(mappedColors())
+  const loadIcons = () => {
+    setIcons([...Icons])
   }
-  useEffect(loadColors, [])
+  useEffect(loadIcons, [])
 
-  const updateColors = () => {
-    setTimeout(() => setColors(shuffle(mappedColors())), 1000)
+  const updateIcons = () => {
+    setTimeout(() => setIcons(shuffle(Icons)), 1000)
   }
-  useEffect(updateColors, [colors])
+  useEffect(updateIcons, [icons])
 
   const renderListItems = () => {
-    if(colors && colors.length > 0) {
-      return colors.map((color, index) => (
+    if(icons && icons.length > 0) {
+      return icons.map((icon, index) => (
         <ListElement
           key={index}
           layoutTransition={spring}
-          style={{ background: color}}
         >
-          <Image src={ColoredIcons[index].icon} width='45px' height='45px' />
+          <Logo src={icon} />
         </ListElement>
 ))
     }
   }
 
   return (
-    <Flex justifyContent='center'>
+    <Container.Row justifyContent='center'>
       <UnOrderedList>
         { renderListItems() }
       </UnOrderedList>
-    </Flex>
+    </Container.Row>
   )
 }
 

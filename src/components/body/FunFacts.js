@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
-import { Flex, Box, Text, Button } from '@primer/components'
-import { Title, UnOrderedList, ListItem } from '../../styled/Components'
 import styled from 'styled-components'
+import { Box, Text } from '@primer/components'
+import { border, layout } from 'styled-system'
+import { Button, List, Header } from '../../styled/Components'
 
-const ShowPubs = styled(Button)`
-  background-color: #BA5A31 !important;
-  color: #FFF;
+const Boxy = styled(Box).attrs(p => ({
+  borderRadius: 5,
+  backgroundColor: '#F6F2ED',
+}))`
+  ${ layout }
+  ${ border }
 `
 
 const journalArticles = [
@@ -25,33 +29,30 @@ const FunFacts = ({...rest}) => {
   const renderJournalArticles = () => {
     if(journalArticles && journalArticles.length > 0){
       return journalArticles.map((ja, index) => (
-        <ListItem key={index}>{ja}</ListItem>
+        <List.Item key={index}>{ja}</List.Item>
       ))
     }
   }
 
   return (
-    <Flex flexDirection='column'>
-      <Box backgroundColor='#F6F2ED' p={16}>
-        <Title>Fun Facts</Title>
+    <Boxy>
+      <Box p={16}>
+        <Header.H1>Fun Facts</Header.H1>
         <Text as='p'>
           I published 6 Peer Reviewed Science Articles between 2002 and 2011
         </Text>
-        <ShowPubs 
-          color='#BA5A31'
-          onClick={toggleShow}
-        >
+        <Button.Plain onClick={toggleShow}>
           {show ? 'Close' : 'View'} Publications
-        </ShowPubs>
+        </Button.Plain>
       </Box>
       {show && (
-        <Box>
-          <UnOrderedList>
+        <List.Box>
+          <List.UnOrdered>
             {renderJournalArticles()}
-          </UnOrderedList>
-        </Box>
+          </List.UnOrdered>
+        </List.Box>
       )}
-    </Flex>
+    </Boxy>
   )
 }
 

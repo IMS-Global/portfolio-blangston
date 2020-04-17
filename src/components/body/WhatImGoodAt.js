@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@primer/components'
-import { Title, Table, Row, Cell } from '../../styled/Components'
+import { Header, Table } from '../../styled/Components'
 import styled from 'styled-components'
 
 
@@ -41,28 +41,30 @@ const WhatImGoodAt = ({...rest}) => {
   const renderSkillSets = () => {
     if(skillSets && skillSets.length > 0){
       return skillSets.map((ss, index) => (
-        <Row key={index}>
-          <Cell flexGrow={3}>
-            <SkillType>
-              {ss.type}
-            </SkillType>
-          </Cell>
-          <Cell flexGrow={1}>
-            <SkillYears>
-              {ss.years}&nbsp;years
-            </SkillYears>
-          </Cell>
-        </Row>
+        <Table.Body key={index}>
+          <Table.Row>
+            <Table.Cell flexGrow={3}>
+              <SkillType>
+                {ss.type}
+              </SkillType>
+            </Table.Cell>
+            <Table.Cell flexGrow={1}>
+              <SkillYears>
+                {ss.years}&nbsp;years
+              </SkillYears>
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
       ))
     }
   }
 
   return (
     <Box>
-      <Title>What I'm Good At</Title>
-      <Table>
+      <Header.H1>What I'm Good At</Header.H1>
+      <Table.Frame>
         { renderSkillSets() }
-      </Table>
+      </Table.Frame>
     </Box>
   )
 }

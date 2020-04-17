@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Box } from '@primer/components'
-import { Image } from '../styled/Components'
+import { Container, Image } from '../styled/Components'
 import styled from 'styled-components'
 
 import BrennickImage from '../images/brennick-with-outline.svg'
@@ -42,7 +42,7 @@ const HeaderHOC = ({...rest}) => {
   }
 
   return (
-    <Flex flexDirection='column' bg='#D3D0CB'>
+    <Container.Col backgroundColor='#D3D0CB'>
       <Box>
         <Flex justifyContent='space-between'>
           <Box flexGrow={2}>
@@ -59,10 +59,10 @@ const HeaderHOC = ({...rest}) => {
       </Box>
       <Box>
         <Flex backgroundColor='#D3D0CB' justifyContent='center'>
-          <Image src={BrennickImage} />
+          <Image src={BrennickImage} mb={-16}/>
         </Flex>
       </Box>
-    </Flex>
+    </Container.Col>
   )
 }
 
